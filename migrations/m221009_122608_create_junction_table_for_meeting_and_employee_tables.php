@@ -3,23 +3,21 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `{{%appointment}}`.
+ * Handles the creation of table `{{%meeting_employee}}`.
  * Has foreign keys to the tables:
  *
  * - `{{%meeting}}`
  * - `{{%employee}}`
  */
-class m221007_063838_create_junction_table_for_meeting_and_employee_tables extends Migration
+class m221009_122608_create_junction_table_for_meeting_and_employee_tables extends Migration
 {
-    /**
-     * {@inheritdoc}
-     */
     public function safeUp()
     {
         $this->createTable('{{%appointment}}', [
+            'id' => $this->primaryKey(),
             'meeting_id' => $this->integer(),
             'employee_id' => $this->integer(),
-            'PRIMARY KEY(meeting_id, employee_id)',
+            // 'PRIMARY KEY(meeting_id, employee_id)',
         ]);
 
         // creates index for column `meeting_id`

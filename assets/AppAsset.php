@@ -20,7 +20,7 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/cirrus-min.css'
+        'css/cirrus-land-min.css'
     ];
     public $js = [
     ];

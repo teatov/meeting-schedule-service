@@ -3,12 +3,6 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>Документация</title>
-    <meta name="csrf-param" content="_csrf" />
-    <meta
-      name="csrf-token"
-      content="jd00cN4ESVf6_PRKRkoPkYL_6ehKTFg6cKUTEyjlUbi7vEQ_uEZkBZW1nAYEPEnz4ZXYiwwbP1ldlEJWBYE1gA=="
-    />
-
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -16,7 +10,10 @@
     />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <link href="assets/font-awesome.min.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/0b331fa76a.js"
+      crossorigin="anonymous"
+    ></script>
     <link href="assets/cirrus-min.css" rel="stylesheet" />
   </head>
 
@@ -256,13 +253,16 @@
               По умолчанию этот файл содержит следующее:
               <pre><code>&lt;?php
     
-    return [
-        'class' =&gt; 'yii\db\Connection',
-        'dsn' =&gt; 'mysql:host=127.0.0.1;dbname=meeting_schedule_service',
-        'username' =&gt; 'root',
-        'password' =&gt; '',
-        'charset' =&gt; 'utf8',
-    ];</code></pre>
+return [
+    'class' =&gt; 'yii\db\Connection',
+    'dsn' =&gt; 'mysql:host=127.0.0.1;dbname=meeting_schedule_service',
+    'username' =&gt; 'root',
+    'password' =&gt; '',
+    'charset' =&gt; 'utf8',
+];</code></pre>
+            </li>
+            <li>Введите следующую команду, чтобы запустить миграцию БД:
+              <pre><code>php yii migrate</code></pre>
             </li>
             <li>
               Подключите приложение к вашему серверу Apache или Nginx.<br />
@@ -517,26 +517,26 @@
           <code>http://meetings.test/v1/employees/4?expand=meetings</code><br />
           Пример ответа:
           <pre><code><small>{<br>&nbsp; &nbsp; "id": 4,
-    &nbsp; &nbsp; "name": "Vinny Pizzapasta",
-    &nbsp; &nbsp; "title": "VP Quality Control",
-    &nbsp; &nbsp; "meetings": [
-    &nbsp; &nbsp; &nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "id": 63,
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "start_time": "01:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "end_time": "02:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "topic": "Commercial distribution"
-    &nbsp; &nbsp; &nbsp; &nbsp; }
-    &nbsp; &nbsp; ]
-    }</small></code></pre>
+&nbsp; &nbsp; "name": "Vinny Pizzapasta",
+&nbsp; &nbsp; "title": "VP Quality Control",
+&nbsp; &nbsp; "meetings": [
+&nbsp; &nbsp; &nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "id": 63,
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "start_time": "01:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "end_time": "02:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "topic": "Commercial distribution"
+&nbsp; &nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; ]
+}</small></code></pre>
           <br />
 
           <samp><span class="tag tag--success">POST</span> /employees</samp> -
           создание нового сотрудника.<br />
           Пример тела запроса:
           <pre><code><small>{<br>&nbsp; &nbsp; "name": "Alexander Hamilton",
-    &nbsp; &nbsp; "title": "Secretary"
-    }</small></code></pre>
+&nbsp; &nbsp; "title": "Secretary"
+}</small></code></pre>
           <br />
 
           <samp
@@ -545,7 +545,7 @@
           - обновление информации о сотруднике по <code>{id}</code>.<br />
           Пример тела запроса:
           <pre><code><small>{<br>&nbsp; &nbsp; "title": "Accountant"
-    }</small></code></pre>
+}</small></code></pre>
           <br />
 
           <samp
@@ -566,27 +566,27 @@
           ><br />
           Пример ответа:
           <pre><code><small>[<br>&nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; "id": 63,
-    &nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
-    &nbsp; &nbsp; &nbsp; &nbsp; "start_time": "01:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "end_time": "02:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "topic": "Commercial distribution"
-    &nbsp; &nbsp; },
-    &nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; "id": 64,
-    &nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
-    &nbsp; &nbsp; &nbsp; &nbsp; "start_time": "02:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "end_time": "04:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "topic": "Money"
-    &nbsp; &nbsp; },
-    &nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; "id": 67,
-    &nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
-    &nbsp; &nbsp; &nbsp; &nbsp; "start_time": "05:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "end_time": "06:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "topic": "Small talk"
-    &nbsp; &nbsp; }
-    ]</small></code></pre>
+&nbsp; &nbsp; &nbsp; &nbsp; "id": 63,
+&nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
+&nbsp; &nbsp; &nbsp; &nbsp; "start_time": "01:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "end_time": "02:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "topic": "Commercial distribution"
+&nbsp; &nbsp; },
+&nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; "id": 64,
+&nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
+&nbsp; &nbsp; &nbsp; &nbsp; "start_time": "02:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "end_time": "04:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "topic": "Money"
+&nbsp; &nbsp; },
+&nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; "id": 67,
+&nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
+&nbsp; &nbsp; &nbsp; &nbsp; "start_time": "05:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "end_time": "06:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "topic": "Small talk"
+&nbsp; &nbsp; }
+]</small></code></pre>
           <br />
           <br />
 
@@ -599,27 +599,27 @@
           списка всех собраний.<br />
           Пример ответа:
           <pre><code><small>[<br>&nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; "id": 62,
-    &nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
-    &nbsp; &nbsp; &nbsp; &nbsp; "start_time": "00:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "end_time": "04:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "topic": "Business business"
-    &nbsp; &nbsp; },
-    &nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; "id": 63,
-    &nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
-    &nbsp; &nbsp; &nbsp; &nbsp; "start_time": "01:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "end_time": "02:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "topic": "Commercial distribution"
-    &nbsp; &nbsp; },
-    &nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; "id": 64,
-    &nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
-    &nbsp; &nbsp; &nbsp; &nbsp; "start_time": "02:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "end_time": "04:00:00",
-    &nbsp; &nbsp; &nbsp; &nbsp; "topic": "Money"
-    &nbsp; &nbsp; }
-    ]</small></code></pre>
+&nbsp; &nbsp; &nbsp; &nbsp; "id": 62,
+&nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
+&nbsp; &nbsp; &nbsp; &nbsp; "start_time": "00:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "end_time": "04:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "topic": "Business business"
+&nbsp; &nbsp; },
+&nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; "id": 63,
+&nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
+&nbsp; &nbsp; &nbsp; &nbsp; "start_time": "01:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "end_time": "02:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "topic": "Commercial distribution"
+&nbsp; &nbsp; },
+&nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; "id": 64,
+&nbsp; &nbsp; &nbsp; &nbsp; "date": "2022-10-07",
+&nbsp; &nbsp; &nbsp; &nbsp; "start_time": "02:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "end_time": "04:00:00",
+&nbsp; &nbsp; &nbsp; &nbsp; "topic": "Money"
+&nbsp; &nbsp; }
+]</small></code></pre>
           <br />
 
           <samp
@@ -631,39 +631,42 @@
           ><br />
           Пример ответа:
           <pre><code><small>{<br>&nbsp; &nbsp; "id": 69,
-    &nbsp; &nbsp; "date": "2022-10-07",
-    &nbsp; &nbsp; "start_time": "06:00:00",
-    &nbsp; &nbsp; "end_time": "07:00:00",
-    &nbsp; &nbsp; "topic": "Rooter: A Methodology for the Typical Unification of Access Points and Redundancy",
-    &nbsp; &nbsp; "employees": [
-    &nbsp; &nbsp; &nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "id": 4,
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "name": "Leland Gaskell",
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "title": "VP Quality Control"
-    &nbsp; &nbsp; &nbsp; &nbsp; }
-    &nbsp; &nbsp; ]
-    }</small></code></pre>
+&nbsp; &nbsp; "date": "2022-10-07",
+&nbsp; &nbsp; "start_time": "06:00:00",
+&nbsp; &nbsp; "end_time": "07:00:00",
+&nbsp; &nbsp; "topic": "Rooter: A Methodology for the Typical Unification of Access Points and Redundancy",
+&nbsp; &nbsp; "employees": [
+&nbsp; &nbsp; &nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "id": 4,
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "name": "Leland Gaskell",
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "title": "VP Quality Control"
+&nbsp; &nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; ]
+}</small></code></pre>
           <br />
 
           <samp><span class="tag tag--success">POST</span> /meetings</samp> -
           создание нового собрания.<br />
+          Чтобы сразу назначить на него сотрудников, добавьте массив
+          <code>employees</code>, содержащий объекты с <code>id</code> или
+          <code>name</code> сотрудника.<br />
           Пример тела запроса:
           <pre><code><small>{<br>&nbsp; &nbsp; "start_time": "08:00",
-    &nbsp; &nbsp; "end_time": "10:00",
-    &nbsp; &nbsp; "date": "2022-10-07",
-    &nbsp; &nbsp; "topic": "Important attend ALL",
-    &nbsp; &nbsp; "employees": [
-    &nbsp; &nbsp; &nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "id": 2
-    &nbsp; &nbsp; &nbsp; &nbsp; },
-    &nbsp; &nbsp; &nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "name": "Babb Ferens"
-    &nbsp; &nbsp; &nbsp; &nbsp; },
-    &nbsp; &nbsp; &nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "id": 4
-    &nbsp; &nbsp; &nbsp; &nbsp; }
-    &nbsp; &nbsp; ]
-    }</small></code></pre>
+&nbsp; &nbsp; "end_time": "10:00",
+&nbsp; &nbsp; "date": "2022-10-07",
+&nbsp; &nbsp; "topic": "Important attend ALL",
+&nbsp; &nbsp; "employees": [
+&nbsp; &nbsp; &nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "id": 2
+&nbsp; &nbsp; &nbsp; &nbsp; },
+&nbsp; &nbsp; &nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "name": "Babb Ferens"
+&nbsp; &nbsp; &nbsp; &nbsp; },
+&nbsp; &nbsp; &nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "id": 4
+&nbsp; &nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; ]
+}</small></code></pre>
           <br />
 
           <samp
@@ -673,9 +676,9 @@
           - обновление информации о собрании по <code>{id}</code>.<br />
           Пример тела запроса:
           <pre><code><small>{
-    &nbsp; &nbsp; "date": "2022-10-07",
-    &nbsp; &nbsp; "topic": "Not very important tbh"
-    }</small></code></pre>
+&nbsp; &nbsp; "date": "2022-10-07",
+&nbsp; &nbsp; "topic": "Not very important tbh"
+}</small></code></pre>
           <br />
 
           <samp
@@ -686,33 +689,66 @@
           <br />
 
           <h5 id="endpoints-appointments">/appointments</h5>
-          Позволяет выполнять операции над связями между сотрудниками и
+          Позволяет выполнять CRUD-операции над связями между сотрудниками и
           собраниями.<br />
 
           <samp><span class="tag tag--info">GET</span> /appointments</samp> -
           вывод списка всех связей.<br />
           Пример ответа:
           <pre><code><small>[<br>&nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; "meeting_id": 62,
-    &nbsp; &nbsp; &nbsp; &nbsp; "employee_id": 4
-    &nbsp; &nbsp; },
-    &nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; "meeting_id": 62,
-    &nbsp; &nbsp; &nbsp; &nbsp; "employee_id": 6
-    &nbsp; &nbsp; },
-    &nbsp; &nbsp; {
-    &nbsp; &nbsp; &nbsp; &nbsp; "meeting_id": 64,
-    &nbsp; &nbsp; &nbsp; &nbsp; "employee_id": 4
-    &nbsp; &nbsp; }
-    ]</small></code></pre>
+&nbsp; &nbsp; &nbsp; &nbsp; "id": 1,
+&nbsp; &nbsp; &nbsp; &nbsp; "meeting_id": 62,
+&nbsp; &nbsp; &nbsp; &nbsp; "employee_id": 4
+&nbsp; &nbsp; },
+&nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; "id": 2,
+&nbsp; &nbsp; &nbsp; &nbsp; "meeting_id": 62,
+&nbsp; &nbsp; &nbsp; &nbsp; "employee_id": 6
+&nbsp; &nbsp; },
+&nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; "id": 3,
+&nbsp; &nbsp; &nbsp; &nbsp; "meeting_id": 64,
+&nbsp; &nbsp; &nbsp; &nbsp; "employee_id": 4
+&nbsp; &nbsp; }
+]</small></code></pre>
+          <br />
+
+          <samp><span class="tag tag--info">GET</span> /appointments/{id}</samp>
+          - вывод связи по <code>{id}</code>.<br />
+          Пример ответа:
+          <pre><code><small>{
+&nbsp; &nbsp; "id": 1,
+&nbsp; &nbsp; "meeting_id": 62,
+&nbsp; &nbsp; "employee_id": 4
+}</small></code></pre>
           <br />
 
           <samp><span class="tag tag--success">POST</span> /appointments</samp>
           - создание новой связи.<br />
           Пример тела запроса:
-          <pre><code><small>{<br>&nbsp; &nbsp; "meeting_id": 21,
-    &nbsp; &nbsp; "employee_id": 2
-    }</small></code></pre>
+          <pre><code><small>{
+&nbsp; &nbsp; "meeting_id": 31,
+&nbsp; &nbsp; "employee_id": 7
+}</small></code></pre>
+          <br />
+
+          <samp
+            ><span class="tag tag--warning">PATCH</span>
+            /appointments/{id}</samp
+          >
+          - обновление информации о связи по <code>{id}</code>.<br />
+          Пример тела запроса:
+          <pre><code><small>{
+&nbsp; &nbsp; "meeting_id": 83,
+&nbsp; &nbsp; "employee_id": 2
+}</small></code></pre>
+          <br />
+
+          <samp
+            ><span class="tag tag--danger">DELETE</span>
+            /appointments/{id}</samp
+          >
+          - удаление связи по <code>{id}</code>.<br />
           <br />
           <hr />
           <br />
