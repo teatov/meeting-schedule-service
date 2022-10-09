@@ -4,23 +4,10 @@ namespace app\modules\v1\controllers;
 
 use app\modules\v1\resource\Employee;
 use Yii;
-use yii\rest\ActiveController;
 
-class EmployeeController extends ActiveController
+class EmployeeController extends FilterableController
 {
     public $modelClass = Employee::class;
-
-    public function actions()
-    {
-        $actions = parent::actions();
-
-        $actions['index']['dataFilter'] = [
-            'class' => \yii\data\ActiveDataFilter::class ,
-            'searchModel' => $this->modelClass,
-        ];
-
-        return $actions;
-    }
 
     public function actionBuildSchedule($id, $date)
     {

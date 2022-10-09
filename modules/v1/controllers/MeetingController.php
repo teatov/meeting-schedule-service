@@ -3,9 +3,8 @@
 namespace app\modules\v1\controllers;
 
 use app\modules\v1\resource\Meeting;
-use yii\rest\ActiveController;
 
-class MeetingController extends ActiveController
+class MeetingController extends FilterableController
 {
     public $modelClass = Meeting::class;
 
@@ -14,15 +13,10 @@ class MeetingController extends ActiveController
         $actions = parent::actions();
 
         $actions['create'] = [
-            'class' => 'app\modules\v1\resource\CreateActionMeeting',
+            'class' => 'app\modules\v1\controllers\actions\CreateMeetingAction',
             'modelClass' => $this->modelClass,
             'checkAccess' => [$this, 'checkAccess'],
             'scenario' => $this->createScenario,
-        ];
-
-        $actions['index']['dataFilter'] = [
-            'class' => \yii\data\ActiveDataFilter::class ,
-            'searchModel' => $this->modelClass,
         ];
 
         return $actions;

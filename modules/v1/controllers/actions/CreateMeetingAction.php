@@ -1,12 +1,14 @@
 <?php
 
-namespace app\modules\v1\resource;
+namespace app\modules\v1\controllers\actions;
 
+
+use app\modules\v1\resource\Employee;
 use Yii;
 use yii\rest\CreateAction;
 use yii\web\BadRequestHttpException;
 
-class CreateActionMeeting extends CreateAction
+class CreateMeetingAction extends CreateAction
 {
     public function run()
     {
