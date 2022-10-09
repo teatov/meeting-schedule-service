@@ -505,14 +505,14 @@ return [
           Ресурс имеет скрытое поле <code>meetings</code>, которое можно
           добавить параметром <code>expand</code>.<br />
           <br />
-          <samp><span class="tag tag--info">GET</span> /employees</samp> - вывод
-          коллекции всех сотрудников.<br />
+          <samp><span class="tag tag--info">GET</span> /employees</samp> - возвращает
+          коллекцию всех сотрудников.<br />
           Пример ответа:
           <pre><code><small>[<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; "id": 1,<br>&nbsp; &nbsp; &nbsp; &nbsp; "name": "Otto Hastie",<br>&nbsp; &nbsp; &nbsp; &nbsp; "title": "Analog Circuit Design manager"<br>&nbsp; &nbsp; },<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; "id": 2,<br>&nbsp; &nbsp; &nbsp; &nbsp; "name": "Cornelius Slyde",<br>&nbsp; &nbsp; &nbsp; &nbsp; "title": "Teacher"<br>&nbsp; &nbsp; },<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; "id": 3,<br>&nbsp; &nbsp; &nbsp; &nbsp; "name": "Vinny Pizzapasta",<br>&nbsp; &nbsp; &nbsp; &nbsp; "title": "VP Quality Control"<br>&nbsp; &nbsp; }<br>]</small></code></pre>
           <br />
 
           <samp><span class="tag tag--info">GET</span> /employees/{id}</samp> -
-          вывод сотрудника по <code>{id}</code>.<br />
+          возвращает сотрудника по <code>{id}</code>.<br />
           Пример запроса:
           <code>http://meetings.test/v1/employees/4?expand=meetings</code><br />
           Пример ответа:
@@ -595,8 +595,8 @@ return [
           Ресурс имеет скрытое поле <code>employees</code>, которое можно
           добавить параметром <code>expand</code>.<br />
           <br />
-          <samp><span class="tag tag--info">GET</span> /meetings</samp> - вывод
-          коллекции всех собраний.<br />
+          <samp><span class="tag tag--info">GET</span> /meetings</samp> - возвращает
+          коллекцию всех собраний.<br />
           Пример ответа:
           <pre><code><small>[<br>&nbsp; &nbsp; {
 &nbsp; &nbsp; &nbsp; &nbsp; "id": 62,
@@ -625,7 +625,7 @@ return [
           <samp
             ><span class="tag tag--info">GET</span> /meetings/&lt;id&gt;</samp
           >
-          - вывод собрания по <code>{id}</code>.<br />
+          - возвращает собрание по <code>{id}</code>.<br />
           Пример запроса:
           <code>http://meetings.test/v1/meetings/69?expand=employees</code
           ><br />
@@ -693,7 +693,7 @@ return [
           собраниями.<br />
 
           <samp><span class="tag tag--info">GET</span> /appointments</samp> -
-          вывод коллекции всех связей.<br />
+          возвращает коллекцию всех связей.<br />
           Пример ответа:
           <pre><code><small>[<br>&nbsp; &nbsp; {
 &nbsp; &nbsp; &nbsp; &nbsp; "id": 1,
@@ -714,7 +714,7 @@ return [
           <br />
 
           <samp><span class="tag tag--info">GET</span> /appointments/{id}</samp>
-          - вывод связи по <code>{id}</code>.<br />
+          - возвращает связь по <code>{id}</code>.<br />
           Пример ответа:
           <pre><code><small>{
 &nbsp; &nbsp; "id": 1,
