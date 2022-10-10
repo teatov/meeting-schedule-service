@@ -6,6 +6,7 @@ use app\modules\v1\resource\Employee;
 use app\modules\v1\resource\Meeting;
 use Yii;
 use yii\web\BadRequestHttpException;
+use yii\web\NotFoundHttpException;
 
 class MeetingController extends FilterableController
 {
@@ -35,12 +36,15 @@ class MeetingController extends FilterableController
             elseif (array_key_exists('name', $employee)) {
                 $employee_model = Employee::findOne(['name' => $employee['name']]);
             }
+            else {
+                throw new BadRequestHttpException('Please provide valid employee ID or name');
+            }
 
             if ($employee_model) {
                 $model->link('employees', $employee_model);
             }
             else {
-                throw new BadRequestHttpException('Please provide valid employee ID or name');
+                throw new NotFoundHttpException('Employee with ' . (array_key_exists('id', $employee) ? ('id ' . $employee['id']) : ('name ' . $employee['name'])) . ' does not exist');
             }
         }
 
